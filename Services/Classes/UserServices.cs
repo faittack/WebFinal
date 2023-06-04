@@ -13,7 +13,7 @@ namespace Services.Classes
         FinalPrjContext _context;
 
 
-        public List<UserVM> AddUsers() { 
+        public List<UserVM> GetUsers() { 
         _context = new FinalPrjContext(); 
         List<UserVM> result = new List<UserVM>();
             var list = _context.Users.ToList();
