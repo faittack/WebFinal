@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ServicePrj.Models;
+namespace Services.Models;
 
 public partial class FinalPrjContext : DbContext
 {
@@ -15,7 +15,7 @@ public partial class FinalPrjContext : DbContext
     {
     }
 
-    public virtual DbSet<City> City { get; set; }
+    public virtual DbSet<City> Cities { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -27,10 +27,9 @@ public partial class FinalPrjContext : DbContext
     {
         modelBuilder.Entity<City>(entity =>
         {
-            entity.Property(e => e.Id)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("Id");
+            entity.ToTable("City");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.City1)
                 .HasMaxLength(50)
                 .IsUnicode(false)
