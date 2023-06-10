@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services.Viewmodel
 {
-    internal class CategoryVM
+    public class CategoryVM
     {
         public long Id { get; set; }
 
