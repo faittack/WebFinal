@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Services.Models;
 
-public partial class City
+public partial class CityTable
 {
     public long Id { get; set; }
 
-    public string City1 { get; set; } = null!;
+    public string City { get; set; } = null!;
 }

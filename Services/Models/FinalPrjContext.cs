@@ -15,9 +15,13 @@ public partial class FinalPrjContext : DbContext
     {
     }
 
-    public virtual DbSet<City> Cities { get; set; }
+    public virtual DbSet<CategoryTable> CategoryTables { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<CityTable> CityTables { get; set; }
+
+    public virtual DbSet<ProductTable> ProductTables { get; set; }
+
+    public virtual DbSet<UsersTable> UsersTables { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -25,20 +29,57 @@ public partial class FinalPrjContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<City>(entity =>
+        modelBuilder.Entity<CategoryTable>(entity =>
         {
-            entity.ToTable("City");
+            entity.ToTable("CategoryTable");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.City1)
+            entity.Property(e => e.Category)
                 .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("City");
+                .IsUnicode(false);
         });
 
-        modelBuilder.Entity<User>(entity =>
+        modelBuilder.Entity<CityTable>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK_City");
+
+            entity.ToTable("CityTable");
+
+            entity.Property(e => e.City)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<ProductTable>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Product");
+
+            entity.ToTable("ProductTable");
+
+            entity.Property(e => e.ProductImage)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.ProductName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.ProductPrize).HasColumnType("decimal(18, 2)");
+
+            entity.HasOne(d => d.ProductCategoryNavigation).WithMany(p => p.ProductTables)
+                .HasForeignKey(d => d.ProductCategory)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ProductTable_CategoryTable");
+        });
+
+        modelBuilder.Entity<UsersTable>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Users");
+
+            entity.ToTable("UsersTable");
+
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Adress)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.BirthDate).HasColumnType("date");
             entity.Property(e => e.Email)
                 .HasMaxLength(30)
                 .IsUnicode(false);

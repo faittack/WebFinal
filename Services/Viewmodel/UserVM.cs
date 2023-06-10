@@ -20,5 +20,9 @@ namespace Services.Viewmodel
 
         public string Password { get; set; } = null!;
 
+        public string Adress { get; set; } = null!;
+
+        public DateTime? BirthDate { get; set; }
+
     }
 }

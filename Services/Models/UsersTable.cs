@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Services.Models;
 
-public partial class User
+public partial class UsersTable
 {
     public long Id { get; set; }
 
@@ -14,4 +14,8 @@ public partial class User
     public string Email { get; set; } = null!;
 
     public string Password { get; set; } = null!;
+
+    public string Adress { get; set; } = null!;
+
+    public DateTime? BirthDate { get; set; }
 }

@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Services.Classes;
+using Services.Models;
+using Services.Viewmodel;
 using System.Diagnostics;
+using WebApplication2.Controllers;
 using WebFinal.Models;
 
 namespace WebFinal.Controllers
@@ -7,6 +12,8 @@ namespace WebFinal.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+      
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -28,5 +35,7 @@ namespace WebFinal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }
