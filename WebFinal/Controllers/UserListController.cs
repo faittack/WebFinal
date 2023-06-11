@@ -6,12 +6,10 @@ using Services.Viewmodel;
 
 namespace WebFinal.Controllers
 {
-    public class UserController : Controller
+    public class UserListController : Controller
     {
         private readonly Services.Models.FinalPrjContext _context;
 
-
-     
 
 
         public IActionResult Index()
@@ -21,6 +19,7 @@ namespace WebFinal.Controllers
             var model = userServices.GetUsers();
 
             return View(model);
+
         }
 
     }

@@ -15,11 +15,13 @@ namespace Services.Viewmodel
 
         public long ProductCategory { get; set; }
 
+        public string ProductCategoryName { get; set; }
+
         public decimal ProductPrize { get; set; }
 
         public long ProductStock { get; set; }
 
-        public string ProductImage { get; set; } = null!;
+        public string ProductImage { get; set; }
 
 
     }

@@ -10,4 +10,6 @@ public partial class CategoryTable
     public string Category { get; set; } = null!;
 
     public virtual ICollection<ProductTable> ProductTables { get; set; } = new List<ProductTable>();
+
+    public virtual ICollection<SubCategoryTable> SubCategoryTables { get; set; } = new List<SubCategoryTable>();
 }

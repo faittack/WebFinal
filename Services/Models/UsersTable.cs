@@ -17,5 +17,5 @@ public partial class UsersTable
 
     public string Adress { get; set; } = null!;
 
-    public DateTime? BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
 }

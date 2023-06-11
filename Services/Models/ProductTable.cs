@@ -17,5 +17,5 @@ public partial class ProductTable
 
     public string ProductImage { get; set; } = null!;
 
-    public virtual CategoryTable ProductCategoryNavigation { get; set; } = null!;
+    public virtual CategoryTable CategoryTable { get; set; } = null!;
 }

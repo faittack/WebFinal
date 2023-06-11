@@ -21,6 +21,8 @@ public partial class FinalPrjContext : DbContext
 
     public virtual DbSet<ProductTable> ProductTables { get; set; }
 
+    public virtual DbSet<SubCategoryTable> SubCategoryTables { get; set; }
+
     public virtual DbSet<UsersTable> UsersTables { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -63,10 +65,27 @@ public partial class FinalPrjContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.ProductPrize).HasColumnType("decimal(18, 2)");
 
-            entity.HasOne(d => d.ProductCategoryNavigation).WithMany(p => p.ProductTables)
+            entity.HasOne(d => d.CategoryTable).WithMany(p => p.ProductTables)
                 .HasForeignKey(d => d.ProductCategory)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ProductTable_CategoryTable");
+        });
+
+        modelBuilder.Entity<SubCategoryTable>(entity =>
+        {
+            entity.ToTable("Sub-CategoryTable");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+            entity.Property(e => e.SubCategory)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("Sub-Category");
+
+            entity.HasOne(d => d.Category).WithMany(p => p.SubCategoryTables)
+                .HasForeignKey(d => d.CategoryId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Sub-CategoryTable_CategoryTable");
         });
 
         modelBuilder.Entity<UsersTable>(entity =>

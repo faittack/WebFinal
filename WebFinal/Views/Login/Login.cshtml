@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/LoginPage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Giriş Yap</title>
+
+</head>
+<body>
+    <div class="box">
+
+        <div class="container">
+
+            <div class="two-col">
+                @TempData["error"]
+            </div>
+            <div class="top">
+                <span>Hesabın zaten var mı?</span>
+                <header>Giriş Yap</header>
+            </div>
+            <form asp-controller="Login" asp-action="Login">
+                <div class="input-field">
+                    <input type="text" name="username" required class="input" placeholder="Kullanıcı Adı" id="">
+                    <i class='bx bx-user'></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="Password" name="password" required class="input" placeholder="Şifre" id="">
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Giriş Yap">
+
+            </form>
+        </div>
+
+        <div class="two-col">
+            @ViewBag.Mesaj
+        </div>
+    </div>
+
+</body>
+</html>

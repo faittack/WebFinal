@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Services.Viewmodel.ProductVM>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="space" id="products">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Ürün Adı
+            </th>
+            <th>
+                Ürün Fiyatı
+            </th>
+            <th>
+                Ürün Stoğu
+            </th>
+
+            <th>
+                Ürün Türü
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategoryName)
+                </td>
+                <td>
+                        <a class="btn btn-secondary" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+
+                        <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Stok Ekle</a>
+                </td>
+            </tr>
+               
+        }
+    </tbody>
+</table>
+</div>

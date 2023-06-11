@@ -57,7 +57,7 @@ namespace Services.Classes
                 model.Email = vm.Email;
                 model.Password = vm.Password;
                 model.Adress = vm.Adress;   
-                model.BirthDate = vm.BirthDate; 
+                model.BirthDate = (DateTime)vm.BirthDate; 
 
 
                 _context.UsersTables.Add(model);
@@ -90,7 +90,7 @@ namespace Services.Classes
                 model.Email = vm.Email;
                 model.Password = vm.Password;
                 model.Adress = vm.Adress;
-                model.BirthDate = vm.BirthDate;
+                model.BirthDate = (DateTime)vm.BirthDate;
 
                 _context.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 _context.SaveChanges();
@@ -137,10 +137,10 @@ namespace Services.Classes
 
             _context = new FinalPrjContext();
 
-            var ControllModel = _context.UsersTables.Find(email);
+            var ControllModel = _context.UsersTables.Where(x=> (x.Email==email && x.Password == pass)).FirstOrDefault();
 
 
-            if (ControllModel != null && ControllModel.Password==pass)
+            if (ControllModel != null )
             {
 
                 return true;

@@ -22,7 +22,7 @@ namespace WebApplication2.Controllers
         {
             if (IsSesionalAlive()== false) {
                 TempData["error"] = "Bu sayfayı görüntülemek için giriş yapmalısınız!!!";
-                filtercontext.Result = RedirectToAction("Login", "Login");
+                filtercontext.Result = RedirectToAction( "Index", "Home");
                 return;
                  
               }

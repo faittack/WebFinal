@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+@model Services.Viewmodel.ProductVMI
+
+<div class="space" id="products">
+    <div class="product-form">
+
+        <form asp-controller="Product" asp-action="Product"  method="post" enctype="multipart/form-data">
+            <label>Ürün İsmi:</label>
+            <input type="text" asp-for="ProductName" required>
+            <br>        
+            <label for="barcode">Kategori:</label>
+            <input type="number" asp-for="ProductCategory" required>
+            <br>
+            <label for="price">Fiyat:</label>
+            <input type="number" asp-for="ProductPrize" required>
+            <br>
+            <label for="stock">Stok Adedi:</label>
+            <input type="number" asp-for="ProductStock" required>
+            <br>
+            <label for="stock">Resim Seçiniz:</label>
+            <input class="btn btn-secondary" type="file" asp-for="ProductImage" required>
+            <br>
+            <br>
+  
+            <input type="submit" value="Ürün Ekle" class="btn btn-primary">
+        </form>
+    </div>
+
+</div>
