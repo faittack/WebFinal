@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_Layout";
+    
+}
+
+    <link rel="stylesheet" type="text/css" href="~/css/UserCSS/salesPage.css">
+
+    <div class="container">
+        <div class="product-screen">
+            <div class="product">
+                <div class="image-container">
+                    @*<img src="images/img1.jpeg" alt="Product 1" id="product-img">*@
+                    <div class="image-buttons">
+                        <button class="prev-button" id="prev-button" onclick="changeProductImage(-1)" disabled></button>
+                        <button class="next-button" id="next-button" onclick="changeProductImage(1)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-screen">
+            <div class="cart-content">
+                <h3>Product Name</h3>
+                <p class="product-price">$19.99</p>
+                <div class="count-container">
+                    <button class="count-button" onclick="decreaseCount()">-</button>
+                    <span id="product-count">0</span>
+                    <button class="count-button" onclick="increaseCount()">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/script.js"></script>
+
+

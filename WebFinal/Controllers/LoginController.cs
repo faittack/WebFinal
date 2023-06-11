@@ -17,8 +17,8 @@ namespace WebFinal.Controllers
    
             if (users.CheckUsers(username, password))
             {
-                HttpContext.Session.SetString("UserSession", "0");
-                return RedirectToAction("Index", "Home");
+                HttpContext.Session.SetString("UserSession", username);
+                return RedirectToAction("Main", "Home");
             }
             else
             {

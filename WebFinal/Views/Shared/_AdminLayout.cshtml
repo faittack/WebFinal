@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />   
-    <title>@ViewData["Title"] - Götür Admin Panel</title>
-    <link rel="icon" type="image/x-icon" href="~/IconS/favicon.ico" />
+    <title>@ViewData["Title"] Hepsi Orada Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="~/IconS/Logo.png">
     <link rel="stylesheet" type="text/css" href="~/css/AdminCSS/admin.css">
     <link href="~/css/AdminCSS/SideBarstyles.css" rel="stylesheet" />
 </head>
@@ -12,7 +12,12 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading border-bottom bg-light">Admin Paneline Hoşgelidiniz</div>
+            <div style="margin-left:80px;  margin: 80px  ">
+                <a asp-controller="Admin" asp-action="Index">
+                    <img style=" max-height: 100px; max-width: 100px;" src="~/IconS/Logo.png">
+                </a>
+                
+            </div>
             <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-controller="Admin" asp-action="Index">Ürünleri Listele</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-controller="Product" asp-action="Product" >Ürün Ekle</a>                        

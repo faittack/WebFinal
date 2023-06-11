@@ -105,11 +105,11 @@ namespace Services.Classes
             }
         }
 
-        public bool DeleteUsers(UserVM vm)
+        public bool DeleteUsers(long id)
         {
             _context = new FinalPrjContext();
 
-            var model = _context.UsersTables.Find(vm.Id);
+            var model = _context.UsersTables.Find(id);
 
             if (model != null)
             {

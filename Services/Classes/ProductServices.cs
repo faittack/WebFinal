@@ -4,6 +4,7 @@ using Services.Viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +47,35 @@ namespace Services.Classes
 
             return result;
         }
+
+        public ProductVM SearchProduct(long ıd)
+        {
+            _context = new FinalPrjContext();
+
+
+            var ControllModel = _context.ProductTables.Find(ıd);
+
+            ProductVM model = new ProductVM();
+
+            if (ControllModel != null)
+            {
+               
+
+                model.Id = ControllModel.Id;
+                model.ProductName = ControllModel.ProductName;
+                model.ProductCategory = ControllModel.ProductCategory;
+                model.ProductPrize = ControllModel.ProductPrize;
+                model.ProductStock = ControllModel.ProductStock;  
+
+                return model;
+
+            }
+
+            return model;
+
+
+        }
+
 
 
         public List<ProductVM> GetProductForClients()
@@ -107,6 +137,18 @@ namespace Services.Classes
 
         //    return result;
         //}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,7 +219,7 @@ namespace Services.Classes
                     var extension = Path.GetExtension(vm.ProductImage.FileName);
                     var newimagename = Guid.NewGuid() + extension;
                     var location = Path.Combine(Directory.GetCurrentDirectory(), "~/Images/", newimagename);
-                    var stream = new FileStream(location, FileMode.Create);
+                    var stream = new FileStream(location, FileMode.CreateNew);
                     vm.ProductImage.CopyTo(stream);
                     model.ProductImage = newimagename;
 
@@ -203,8 +245,6 @@ namespace Services.Classes
             }
 
         }
-
-
 
         public bool DeleteProduct(ProductVM vm)
         {

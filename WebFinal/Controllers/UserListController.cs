@@ -10,8 +10,6 @@ namespace WebFinal.Controllers
     {
         private readonly Services.Models.FinalPrjContext _context;
 
-
-
         public IActionResult Index()
         {
             UserServices userServices = new UserServices();
@@ -21,6 +19,18 @@ namespace WebFinal.Controllers
             return View(model);
 
         }
+
+        public IActionResult Delete(long id)
+        {
+            UserServices userServices = new UserServices();
+
+            var model = userServices.DeleteUsers(id);
+
+
+            return RedirectToAction("Index", "Admin");
+        }
+
+
 
     }
 }
