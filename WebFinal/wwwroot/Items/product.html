@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three-Part Screen Layout</title>
+    <link rel="stylesheet" type="text/css" href="products.css">
+    <link rel="stylesheet" type="text/css" href="deneme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <img src="icons/Logo.png" class="logo-img">
+          <a href="#" class="logo">Götür</a>
+        </div>
+        <ul class="navbar-menu">
+          
+          <li><a href="#">Elektronik</a></li>
+          <li><a href="#">Yiyecek</a></li>
+          <li><a href="#">Spor, Outdoor</a></li>
+          <li><a href="#">Kitap, Müzik, Film, Hobi</a></li>
+        </ul>
+        <div class="search-box">
+          <input type="text" placeholder="Search..." class="search-input">
+          <button class="search-button">Ara</button>
+          <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+          <div class="user-control">
+            <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+            <div class="dropdown">
+              <ul class="dropdown-menu">
+                <li><a href="#">Hesabım</a></li>
+                <li><a href="#">Sepet</a></li>
+                <li><a href="#">Giriş Yap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="content">
+        <div class="left-section">
+            <div class="range_container">
+                <div class="sidebar">
+                    <h3>Filtre</h3>
+                  
+                    <div class="filter-group">
+                      <h4>Kategori</h4>
+                      <ul>
+                        <li><label>Elektronik<input type="checkbox"></label></li>
+                        <li><label>Moda<input type="checkbox"></label></li>
+                        <li><label>Spor, Outdoor<input type="checkbox"></label></li>
+                        <li><label>Kitap, Müzik, Film, Hobi<input type="checkbox"></label></li>
+                      </ul>
+                    </div>
+                <div class="sliders_control">
+                  <input id="fromSlider" type="range" value="10" min="0" max="100" />
+                  <input id="toSlider" type="range" value="40" min="0" max="100" />
+                </div>
+                <div class="form_control">
+                  <div class="form_control_container">
+                    <div class="form_control_container__time">Min</div>
+                    <input class="form_control_container__time__input" type="number" id="fromInput" value="10" min="0" max="100" />
+                  </div>
+                  <div class="form_control_container">
+                    <div class="form_control_container__time">Max</div>
+                    <input class="form_control_container__time__input" type="number" id="toInput" value="40" min="0" max="100" />
+                  </div>
+                </div>
+              </div>
+              
+                <button class="filter-button">Apply Filters</button>
+              </div>
+              
+                    
+        </div>
+
+
+        <div class="right-section">
+            <div>
+                <div class="verticalCards">
+                    <div class="cards">
+                        <img src="images/img1.jpeg" alt="">
+                        <a href="Tarifler/Çilekli Maden Suyu.html">Armut</a>
+                    </div>
+                    <div class="cards">
+                        <img src="images/img2.jpeg" alt="">
+                        <a href="Tarifler/Izgarada Somon.html">Zeytin</a>
+                    </div>
+                    <div class="cards">
+                        <img src="images/img3.jpeg" alt="">
+                        <a href="Tarifler/Mercimek Çorbası.html">Dürüm</a>
+                    </div>
+
+                    <div class="cards">
+                        <img src="images/img4.jpeg" alt="">
+                        <a href="Tarifler/Mercimek Çorbası.html">Usb Kablo</a>
+                    </div>
+                    
+                </div>
+                
+                <div class="verticalCards">
+                    <div class="cards">
+                        <img src="images/img4.jpeg" alt="">
+                        <a href="Tarifler/Mercimek Çorbası.html">Usb Kablo</a>
+                    </div>
+                    <div class="cards">
+                        <img src="images/img1.jpeg" alt="">
+                        <a href="Tarifler/Çilekli Maden Suyu.html">Armut</a>
+                    </div>
+                    <div class="cards">
+                        <img src="images/img5.jpeg" alt="">
+                        <a href="Tarifler/Mercimek Çorbası.html">Elma</a>
+                    </div>
+                    <div class="cards">
+                        <img src="images/img2.jpeg" alt="">
+                        <a href="Tarifler/Izgarada Somon.html">Zeytin</a>
+                    </div>
+                            
+                </div>
+            </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>

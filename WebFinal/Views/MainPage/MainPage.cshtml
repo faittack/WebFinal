@@ -1,0 +1,90 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+<div class="content">
+    <div class="left-section">
+        <div class="range_container">
+            <div class="sidebar">
+                <h3>Filtre</h3>
+
+                <div class="filter-group">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><label>Elektronik<input type="checkbox"></label></li>
+                        <li><label>Moda<input type="checkbox"></label></li>
+                        <li><label>Spor, Outdoor<input type="checkbox"></label></li>
+                        <li><label>Kitap, Müzik, Film, Hobi<input type="checkbox"></label></li>
+                    </ul>
+                </div>
+                <div class="sliders_control">
+                    <input id="fromSlider" type="range" value="10" min="0" max="100" />
+                    <input id="toSlider" type="range" value="40" min="0" max="100" />
+                </div>
+                <div class="form_control">
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Min</div>
+                        <input class="form_control_container__time__input" type="number" id="fromInput" value="10" min="0" max="100" />
+                    </div>
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Max</div>
+                        <input class="form_control_container__time__input" type="number" id="toInput" value="40" min="0" max="100" />
+                    </div>
+                </div>
+            </div>
+
+            <button class="filter-button">Apply Filters</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="right-section">
+        <div>
+            <div class="verticalCards">
+                <div class="cards">
+                    <img src="images/img1.jpeg" alt="">
+                    <a href="Tarifler/Çilekli Maden Suyu.html">Armut</a>
+                </div>
+                <div class="cards">
+                    <img src="images/img2.jpeg" alt="">
+                    <a href="Tarifler/Izgarada Somon.html">Zeytin</a>
+                </div>
+                <div class="cards">
+                    <img src="images/img3.jpeg" alt="">
+                    <a href="Tarifler/Mercimek Çorbası.html">Dürüm</a>
+                </div>
+
+                <div class="cards">
+                    <img src="images/img4.jpeg" alt="">
+                    <a href="Tarifler/Mercimek Çorbası.html">Usb Kablo</a>
+                </div>
+
+            </div>
+
+            <div class="verticalCards">
+                <div class="cards">
+                    <img src="images/img4.jpeg" alt="">
+                    <a href="Tarifler/Mercimek Çorbası.html">Usb Kablo</a>
+                </div>
+                <div class="cards">
+                    <img src="images/img1.jpeg" alt="">
+                    <a href="Tarifler/Çilekli Maden Suyu.html">Armut</a>
+                </div>
+                <div class="cards">
+                    <img src="images/img5.jpeg" alt="">
+                    <a href="Tarifler/Mercimek Çorbası.html">Elma</a>
+                </div>
+                <div class="cards">
+                    <img src="images/img2.jpeg" alt="">
+                    <a href="Tarifler/Izgarada Somon.html">Zeytin</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="product.js"></script>
